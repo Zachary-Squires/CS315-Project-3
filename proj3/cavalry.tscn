@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6cw4d1uj2k2o"]
+
+[ext_resource type="Script" path="res://cavUnit.gd" id="1_140sk"]
+[ext_resource type="Texture2D" uid="uid://duugi1hin24s0" path="res://cav.png" id="2_dd0x2"]
+[ext_resource type="Texture2D" uid="uid://cwse20kkge5ei" path="res://circle.png" id="4_rqsv8"]
+[ext_resource type="Script" path="res://progress_bar.gd" id="5_cit54"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24od2"]
+size = Vector2(32, 33)
+
+[node name="Cavalry" type="Area2D"]
+position = Vector2(353, 114)
+script = ExtResource("1_140sk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5.99999, 7.49999)
+scale = Vector2(0.0763359, 0.0725995)
+texture = ExtResource("2_dd0x2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 7.5)
+shape = SubResource("RectangleShape2D_24od2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(15.5, 8)
+scale = Vector2(0.109375, 0.111111)
+texture = ExtResource("4_rqsv8")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -18.0
+offset_top = -24.0
+offset_right = 32.0
+offset_bottom = -11.0
+max_value = 5.0
+show_percentage = false
+script = ExtResource("5_cit54")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

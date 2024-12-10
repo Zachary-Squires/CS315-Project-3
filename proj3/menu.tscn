@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8uphhw84ehyh"]
+
+[ext_resource type="Texture2D" uid="uid://cd54xqxw6xo1x" path="res://vector-cavalry-and-infantry-battle-1770477014.jpg" id="1_841ig"]
+[ext_resource type="Script" path="res://button.gd" id="2_mwux1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1154.0
+offset_bottom = 647.0
+texture = ExtResource("1_841ig")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 464.0
+offset_top = 288.0
+offset_right = 685.0
+offset_bottom = 344.0
+text = "Start"
+script = ExtResource("2_mwux1")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 410.0
+offset_top = 171.0
+offset_right = 738.0
+offset_bottom = 254.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Totally War"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

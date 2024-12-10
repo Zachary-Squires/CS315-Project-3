@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://08bv3vdv47bb"]
+
+[ext_resource type="Script" path="res://arrow_unit.gd" id="1_ho87e"]
+[ext_resource type="Texture2D" uid="uid://cws80sveqxvsb" path="res://Untitled drawing(2).png" id="2_0o7l6"]
+[ext_resource type="Texture2D" uid="uid://cwse20kkge5ei" path="res://circle.png" id="4_kvr6v"]
+[ext_resource type="Script" path="res://progress_bar.gd" id="5_ptawt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24od2"]
+size = Vector2(32, 33)
+
+[node name="ArrowUnit" type="Area2D"]
+position = Vector2(353, 114)
+script = ExtResource("1_ho87e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5.99999, 7.49999)
+scale = Vector2(0.0763359, 0.0725995)
+texture = ExtResource("2_0o7l6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 7.5)
+shape = SubResource("RectangleShape2D_24od2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(15.5, 8)
+scale = Vector2(0.109375, 0.111111)
+texture = ExtResource("4_kvr6v")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -18.0
+offset_top = -24.0
+offset_right = 32.0
+offset_bottom = -11.0
+max_value = 10.0
+show_percentage = false
+script = ExtResource("5_ptawt")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

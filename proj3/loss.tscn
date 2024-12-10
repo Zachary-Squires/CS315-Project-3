@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxgviqnsp7wa6"]
+
+[ext_resource type="Texture2D" uid="uid://c6rdfid4h55kj" path="res://cartoon-beaten-man-illustration-free-vector-2030915265.jpg" id="1_wxhtl"]
+[ext_resource type="Script" path="res://button.gd" id="2_8fmwg"]
+[ext_resource type="Script" path="res://button_2.gd" id="3_m4kmx"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1154.0
+offset_bottom = 647.0
+texture = ExtResource("1_wxhtl")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 464.0
+offset_top = 288.0
+offset_right = 685.0
+offset_bottom = 344.0
+text = "Replay"
+script = ExtResource("2_8fmwg")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 410.0
+offset_top = 171.0
+offset_right = 738.0
+offset_bottom = 254.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Game Over"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 464.0
+offset_top = 347.0
+offset_right = 685.0
+offset_bottom = 403.0
+text = "Quit to Menu"
+script = ExtResource("3_m4kmx")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
